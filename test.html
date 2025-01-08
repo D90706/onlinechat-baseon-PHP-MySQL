@@ -1,79 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>网页聊天</title>
-  <style>
-    /* 整体页面字体设置 */
-    body {
-      font-family: Arial, sans-serif;
-    }
-
-    /* 聊天容器的样式，包括宽度、高度、边框、内边距和滚动条 */
-    #chat-container {
-      width: 500px;
-      height: 400px;
-      border: 1px solid #ccc;
-      padding: 10px;
-      overflow-y: scroll;
-    }
-
-    /* 输入消息框的样式，包括宽度和内边距 */
-    #message-input {
-      width: 450px;
-      padding: 5px;
-    }
-
-    /* 发送按钮的样式，包括内边距和文本 */
-    #send-button {
-      padding: 5px 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态生成DIV示例</title>
+    <style>
+        #container {
+            margin: 20px;
+        }
+        .my-div {
+            background-color: #3498db;
+            color: white;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        let count = 0; // 计数器
+        function addDiv() {
+            count++; // 每次点击增加计数
+            // 创建新的 div 元素
+            const newDiv = document.createElement("div");
+            newDiv.className = "my-div"; // 设置 CSS 类
+            newDiv.innerText = "这是第 " + count + " 个 div"; // 设置 div 内容
+            // 将新创建的 div 插入到容器中
+            document.getElementById("container").appendChild(newDiv);
+        }
+    </script>
 </head>
 
 <body>
-  <h1>网页聊天</h1>
-  <!-- 聊天内容显示的容器 -->
-  <div id="chat-container"></div>
-  <!-- 输入消息的文本框 -->
-  <input type="text" id="message-input" />
-  <!-- 发送消息的按钮 -->
-  <button id="send-button">发送</button>
-
-  <script>
-    // 注释：模拟存储消息的数组
-    let messages = [];
-
-    // 注释：发送消息的函数
-    function sendMessage() {
-      const messageInput = document.getElementById('message-input');
-      const message = messageInput.value;
-      if (message) {
-        messages.push(message);
-        updateChat();
-        messageInput.value = '';
-      }
-    }
-
-    // 注释：更新聊天显示内容的函数
-    function updateChat() {
-      const chatContainer = document.getElementById('chat-container');
-      chatContainer.innerHTML = '';
-      for (const msg of messages) {
-        const p = document.createElement('p');
-        p.textContent = msg;
-        chatContainer.appendChild(p);
-      }
-      chatContainer.scrollTop = chatContainer.scrollHeight;
-    }
-
-    // 注释：为发送按钮添加点击事件处理函数
-    const sendButton = document.getElementById('send-button');
-    sendButton.addEventListener('click', sendMessage);
-  </script>
+    <div id="container">
+        <h2>动态生成DIV示例</h2>
+    </div>
+    <button onclick="addDiv()">点击生成 DIV</button>
 </body>
 
 </html>
