@@ -56,69 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/registration.css">
     <title>注册页面</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
 
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-
-        h2 {
-            text-align: center;
-            color: #333;
-        }
-
-        label {
-            display: block;
-            margin: 10px 0 5px;
-            color: #555;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-            /* 确保内边距和边框包括在宽度内 */
-        }
-
-        input[type="submit"] {
-            background-color: #5cb85c;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #4cae4c;
-            /* 鼠标悬停变化 */
-        }
-        .message {
-            color: #d9534f;
-            /* 错误信息的颜色 */
-            text-align: center;
-            margin-bottom: 10px;
-        }
-    </style>
 </head>
 
 <body>
@@ -128,17 +68,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="message">
             <?php echo $message; ?>
         </div>
-        <?php endif; ?>
+        <span?php endif; ?>
         <form method="post" action="">
-            <label for="username">用户名:</label>
+            <label for="username">用户名:</label><span id="username-error"></span>
             <input type="text" id="username" name="username" required>
-            <label for="password">密码:</label>
+            <label for="password">密码:</label><span id="password-error"></span>
             <input type="password" id="password" name="password" required>
-            <label for="repassword">确认密码:</label>
+            <label for="repassword">确认密码:</label><span id="repassword-error"></span>
             <input type="password" id="repassword" name="repassword" required>
             <label for="log-in"><a href="log-in.php">已有账号？点此登录</a></label>
             <input type="submit" value="提交">
         </form>
     </div>
 </body>
+<script>
+    // 表单验证
+    
+</script>
 </html>
