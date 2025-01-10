@@ -4,7 +4,7 @@ $message = ""; // 初始化消息变量
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 处理表单提交的逻辑
     //链接user_information数据库
-    $conn = new mysqli("localhost", "root", "Scp90706!", "user_information", 3306);
+    $conn = new mysqli("localhost", "root", "", "user_information", 3306);
     if ($conn->connect_error) {//第二次判断是否链接成功
         die('连接失败：' . $conn->connect_error);
     }
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 session_start();
                 $_SESSION['username'] = $username; //存放用户的用户名
                 $_SESSION['password'] = $password; //存放用户的密码
-                header("Location: http://localhost/chat/structure.php");
+                header("Location: http://localhost:8080/chat/structure.php");
                 exit();
             } else {
                 $message = "密码错误";
