@@ -2,7 +2,7 @@
 include("../html/index.html");
     // 处理表单提交的逻辑
     //链接user_information数据库
-    $conn = new mysqli("localhost", "root", "Scp90706!", "user_information", 3306);
+    $conn = new mysqli("localhost", "root", "", "user_information", 3306);
     if ($conn->connect_error) {//是否链接成功
         die('连接失败：' . $conn->connect_error);
     }

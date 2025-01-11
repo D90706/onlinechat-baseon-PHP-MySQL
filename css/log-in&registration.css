@@ -25,12 +25,104 @@ body {
   width: 380px;
   height: 420px;
   border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(
+    0deg,
+    transparent,
+    transparent,
+    #950839,
+    #950839,
+    #950839
+  );
+  z-index: 1;
+  animation: animate 6s linear infinite;
+  transform-origin: bottom right;
+}
+.container::after {
+  content: "";
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(
+    0deg,
+    transparent,
+    transparent,
+    #950839,
+    #950839,
+    #950839
+  );
+  z-index: 1;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+  transform-origin: bottom right;
+}
+.border-box1 {
+  content: "";
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(
+    0deg,
+    transparent,
+    transparent,
+    #d400ff,
+    #5c006e,
+    #c422f5
+  );
+  z-index: 1;
+  animation: animate 6s linear infinite;
+  animation-delay: -1.5s;
+  transform-origin: bottom right;
+}
+.border-box2 {
+  content: "";
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(
+    0deg,
+    transparent,
+    transparent,
+    #d400ff,
+    #5c006e,
+    #c422f5
+  );
+  z-index: 1;
+  animation: animate 6s linear infinite;
+  animation-delay: -4.5s;
+  transform-origin: bottom right;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .container form {
+  position: absolute;
   background-color: #222;
   padding: 50px 40px;
   border-radius: 16px;
   background: linear-gradient(120deg, #191922, #1b0309);
+  z-index: 2;
+  inset: 4px;
 }
 .container form h1 {
   text-align: center;
@@ -100,11 +192,6 @@ body {
 .container form .signup-box a {
   color: #cdcdcd;
 }
-.container form .input-box input::placeholder {
-  text-align: right;
-}
-
-/* 针对不同的浏览器添加前缀 */
 .container form .input-box input::-webkit-input-placeholder {
   text-align: right;
 }

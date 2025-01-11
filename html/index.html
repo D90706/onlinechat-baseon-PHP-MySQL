@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/log-in.css" />
+    <link rel="stylesheet" href="../css/log-in&registration.css" />
     <link rel="icon" href="../img/chat_title.png" type="image/png">
     <title>log-in</title>
 </head>
 
 <body>
     <div class="container">
+        <div class="border-box1" ></div>    
+        <div class="border-box2" ></div>     
         <form action="../php/log-in.php" method="post">
             <h1>Welcome to Online Chat</h1>
             <div class="input-box mbg32">
@@ -19,17 +21,17 @@
                 <label for="name">Name:</label>
                 <i></i>
             </div>
-            <div class="input-box mbg24">
+            <div class="input-box mbg12">
                 <span id="password_message"></span>
                 <input type="password" id="password" name="password" required="required" />
                 <label for="password">password:</label>
                 <i></i>
             </div>
-            <div class="remember-box mbg24">
+            <div class="remember-box mbg12">
                 <input type="checkbox" id="remember" name="remember" checked />
                 <span id="remember_message">Remember me?</span><br />
             </div>
-            <div class="signup-box mbg24">
+            <div class="signup-box mbg12">
                 <label for="registration"><a href="../php/registration.php">"No account yet? Click to register" </a></label>
             </div>
             <div>
