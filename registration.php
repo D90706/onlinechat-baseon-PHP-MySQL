@@ -6,7 +6,7 @@ $message = "";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 处理表单提交的逻辑
     //链接user_information数据库
-    $conn = new mysqli("localhost", "root", "Scp90706!", "user_information", 3306);
+    $conn = new mysqli("localhost", "root", "", "user_information", 3306);
     if ($conn->connect_error) {
         die('连接失败：' . $conn->connect_error);
     }
@@ -15,7 +15,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $username = $_POST['username'];//第三次判断数据是否有效
         $password = $_POST['password'];
         $repassword = $_POST['repassword'];
-        if ($password !== $repassword) {//第四次判断两次密码是否一致
+        $length=strlen(string: $password);
+        if($length!=8){
+            $message = "密码长度必须等于8位";//判断密码长度是否等于8位
+        }
+        else if ($password !== $repassword) {//第四次判断两次密码是否一致
             $message = "两次输入的密码不一致";
         } else {
             // 使用预处理语句防止 SQL 注入
@@ -27,11 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $message = "用户名已存在";
             } else {//没有查询到用户名，则开始将数据导入数据库
                 $stmt = $conn->prepare("INSERT INTO users(username,userpassword) VALUES(?,?)");
-                $stmt->bind_param("ss", $username, vars: $password);
+                $stmt->bind_param("ss", $username, $password);
                 if ($stmt->execute()) {//第六次判断是否数据插入成功
                     $message = "注册成功";
                     echo"<script>alert('注册成功！');</script>";
-                    header("Location: http://localhost/chat/log-in.php");//跳转到登录页面
+                    header("Location: http://localhost:8080/chat/log-in.php");//跳转到登录页面
                     exit();
                 } else {
                     $message = "注册失败";
@@ -56,69 +60,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/registration.css">
     <title>注册页面</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
 
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-
-        h2 {
-            text-align: center;
-            color: #333;
-        }
-
-        label {
-            display: block;
-            margin: 10px 0 5px;
-            color: #555;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-            /* 确保内边距和边框包括在宽度内 */
-        }
-
-        input[type="submit"] {
-            background-color: #5cb85c;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #4cae4c;
-            /* 鼠标悬停变化 */
-        }
-        .message {
-            color: #d9534f;
-            /* 错误信息的颜色 */
-            text-align: center;
-            margin-bottom: 10px;
-        }
-    </style>
 </head>
 
 <body>
