@@ -1,60 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(120deg, #152b39, #360f19);
+  color: #8f8f8f;
+  font-size: 14px;
 }
-
+.mbg12 {
+  margin-bottom: 12px;
+}
+.mbg24 {
+  margin-bottom: 24px;
+}
+.mbg32 {
+  margin-bottom: 32px;
+}
 .container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+  width: 380px;
+  height: 420px;
+  border-radius: 16px;
+}
+.container form {
+  background-color: #222;
+  padding: 50px 40px;
+  border-radius: 16px;
+  background: linear-gradient(120deg, #191922, #1b0309);
+}
+.container form h1 {
+  text-align: center;
+  letter-spacing: 10px;
+  margin-bottom: 24px;
+}
+.container form .input-box {
+  width: 300px;
+  position: relative;
+}
+.container form .input-box input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #2f3037;
+  z-index: 1;
+}
+.container form .input-box label {
+  position: absolute;
+  left: 0;
+  padding: 20px 0 10px;
+  transition: 0.5s;
+  font-size: 16px;
+  pointer-events: none;
+}
+.container form .input-box input:focus ~ label,
+.container form .input-box input:valid ~ label {
+  color: #fff;
+  transform: translateY(-34px);
+  font-size: 14px;
+}
+.container form .input-box i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  height: 2px;
+  width: 100%;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+.container form .input-box input:focus ~ i,
+.container form .input-box input:valid ~ i {
+  height: 36px;
+}
+.container form .remember-box a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #8f8f8f;
+}
+.container form .submit-btn {
+  width: 100%;
+  border-radius: 8px;
+  padding: 9px 25px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  letter-spacing: 12px;
+  margin-bottom: 24px;
+}
+.container form .signup-box {
+  text-align: center;
+}
+.container form .signup-box a {
+  color: #cdcdcd;
+}
+.container form .input-box input::placeholder {
+  text-align: right;
 }
 
-h2 {
-    text-align: center;
-    color: #333;
+/* 针对不同的浏览器添加前缀 */
+.container form .input-box input::-webkit-input-placeholder {
+  text-align: right;
 }
 
-label {
-    display: block;
-    margin: 10px 0 5px;
-    color: #555;
+.container form .input-box input::-moz-placeholder {
+  text-align: right;
+  opacity: 1; /* Firefox 中需要设置透明度以覆盖默认的半透明样式 */
 }
 
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-    /* 确保内边距和边框包括在宽度内 */
-}
-
-input[type="submit"] {
-    background-color: #5cb85c;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 10px;
-}
-
-input[type="submit"]:hover {
-    background-color: #4cae4c;
-    /* 鼠标悬停变化 */
-}
-.message {
-    color: #d9534f;
-    /* 错误信息的颜色 */
-    text-align: center;
-    margin-bottom: 10px;
+.container form .input-box input:-ms-input-placeholder {
+  text-align: right;
 }

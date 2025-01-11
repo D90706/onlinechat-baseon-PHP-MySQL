@@ -1,38 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../img/chat_title.png" type="image/png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../img/chat_title.png" type="image/png" />
+    <link rel="stylesheet" href="../css/registration.css" />
     <title>Registration</title>
-</head>
+  </head>
 
-<body>
-    <div id="main">
+  <body>
+    <div class="container" ,id="main">
+      <form action="../php/registration.php" method="post">
         <h1>Registration</h1>
-        <form action="../php/registration.php" method="post">
-            <label for="username">Username:</label>
-            <span id="username_error"></span>
-            <br>
-            <input type="text" id="username" name="username" placeholder="Enter your username" required>
-            <br><br>
-            <label for="password">password:</label>
-            <span id="password_error"></span>
-            <br>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required>
-            <br><br>
-            <label for="repassword">repassword:</label>
-            <span id="repassword_error"></span>
-            <br>
-            <input type="password" id="repassword" name="repassword" placeholder="Enter your password again" required>
-            <br><br>
-            <label for="log-in"><a href="../php/log-in.php">Have an account already? Click to log in </a></label>
-            <br><br>
-            <input type="submit" value="register">
-        </form>
-    </div>
-</body>
-<script src="../js/registration.js"></script>
+        <div class="input-box mbg32">
+          <span id="username_error"></span>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            required="required"
+          />
+          <label for="username">Username:</label>
+          <i></i>
+        </div>
+        <div class="input-box mbg32">
+          <span id="password_error"></span>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required="required"
+          />
+          <label for="password">password:</label>
+          <i></i>
+        </div>
+        <div class="input-box mbg32">
+          <span id="repassword_error"></span>
+          <input
+            type="password"
+            id="repassword"
+            name="repassword"
+            placeholder="Enter your password again"
+            required="required"
+          />
+          <label for="repassword">repassword:</label>
+          <i></i>
+        </div>
 
+        <div class="signup-box mbg24">
+          <label for="log-in"
+            ><a href="../php/log-in.php"
+              >Have an account already? Click to log in
+            </a></label
+          >
+        </div>
+        <div>
+          <input type="submit" class="submit-btn" value="register" />
+        </div>
+      </form>
+    </div>
+  </body>
+  <script src="../js/registration.js"></script>
 </html>
