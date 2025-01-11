@@ -4,7 +4,7 @@ include("send.php");
 include("accept.php");
 // 检查用户是否已登录
 if (!isset($_SESSION['username'])) {
-    echo "<script>alert('请先登录！');window.location.href='log-in.php';</script>";
+    echo "<script>alert('请先登录！');window.location.href='http://121.41.64.138:81/log-in.php';</script>";
 } else {}
 // 初始化消息数组
 if (!isset($_SESSION['messages'])) {

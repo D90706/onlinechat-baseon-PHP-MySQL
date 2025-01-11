@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="message">
             <?php echo $message; ?>
         </div>
-        <span?php endif; ?>
+        <?php endif; ?>
         <form method="post" action="">
             <label for="username">用户名:</label><span id="username-error"></span>
             <input type="text" id="username" name="username" required>
@@ -82,7 +82,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </body>
 <script>
-    // 表单验证
     
 </script>
 </html>
