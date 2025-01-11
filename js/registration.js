@@ -38,8 +38,8 @@ window.onload = function () {
         }else{
              event.preventDefault(); 
             check = false;
-            username_error.innerHTML = "Username must not contain special characters.";
-            password_error.innerHTML = "Password must not contain special characters.";
+            username_error.innerHTML = "Username mustn't contain special characters";
+            password_error.innerHTML = "Password mustn't contain special characters";
             //alert("Username must not contain special characters. Password must not contain special characters.");
             return false; 
         }
@@ -48,7 +48,7 @@ window.onload = function () {
         if (username.value.length > 20||username.value.length < 1) {
             event.preventDefault(); 
             check = false;
-            username_error.innerHTML = "Username must be between 1 and 20 characters.";
+            username_error.innerHTML = "Username must be 1~20characters.";
             //alert("Username must be between 1 and 20 characters.");
             return false; 
         }else{
@@ -59,7 +59,7 @@ window.onload = function () {
         if (password.value.length < 6 || password.value.length > 10) {
             event.preventDefault(); 
             check = false;
-            password_error.innerHTML = "Password must be between 6 and 10 characters.";
+            password_error.innerHTML = "Password must be 6~10characters.";
             //alert("Password must be between 6 and 10 characters.");
             return false; 
         }else{
