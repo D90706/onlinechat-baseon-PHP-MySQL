@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: linear-gradient(120deg, #152b39, #360f19);
+  color: #8f8f8f;
+  font-size: 14px;
+}
+.mbg12 {
+  margin-bottom: 12px;
+}
+.mbg24 {
+  margin-bottom: 24px;
+}
+.mbg32 {
+  margin-bottom: 32px;
+}
+.container {
+  width: 70%;
+  height: 90%;
+  border-radius: 16px;
+}
+.messages {
+  height: 93%;
+  overflow-y: auto;
+}
+.message {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: large;
+  color: rgb(173, 173, 173);
+  width: 95%;
+  height: 10%;
+  background: linear-gradient(240deg, #191922, #271e2c);
+  border-radius: 16px;
+  border: #706d6d 2px solid;
+}
+.container form {
+  height: 90%;
+  background-color: #222;
+  padding: 50px 40px;
+  border-radius: 16px;
+  background: linear-gradient(120deg, #191922, #1b0309);
+}
+.container h2 {
+  text-align: left;
+  letter-spacing: 10px;
+  margin-bottom: 6px;
+}
+.container form .input-box {
+  width: 60%;
+  margin-right: 5%;
+  position: relative;
+}
+.container form .input-box input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #2f3037;
+  z-index: 1;
+  font-size: large;
+}
+.container form .input-box input:focus ~ label,
+.container form .input-box input:valid ~ label {
+  color: #fff;
+  transform: translateY(-34px);
+  font-size: 14px;
+}
+.container form .input-box i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  height: 2px;
+  width: 100%;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+.container form .input-box input:focus ~ i,
+.container form .input-box input:valid ~ i {
+  height: 44px;
+}
+.container form .submit-btn {
+  margin-right: 9%;
+  width: 10%;
+  border-radius: 8px;
+  padding: 5px 15px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  letter-spacing: 12px;
+  margin-top: auto;
+}
+/* 针对不同的浏览器添加前缀 */
+.container form .input-box input::-webkit-input-placeholder {
+  text-align: right;
+}
+
+.container form .input-box input::-moz-placeholder {
+  text-align: right;
+  opacity: 1; /* Firefox 中需要设置透明度以覆盖默认的半透明样式 */
+}
+
+.container form .input-box input:-ms-input-placeholder {
+  text-align: right;
+}

@@ -3,7 +3,7 @@ include("../html/registration.html");
 
 // 处理表单提交的逻辑
 //链接user_information数据库
-$conn = new mysqli("localhost", "root", "Scp90706!", "user_information", 3306);
+$conn = new mysqli("localhost", "root", "", "user_information", 3306);
 if ($conn->connect_error) {
 
     die('连接失败：' . $conn->connect_error);
@@ -28,7 +28,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['repa
         if ($stmt->execute()) {//第六次判断是否数据插入成功
             echo "<script>username_error.innerHTML='Registration successful';</script>";
             echo "<script>alert('注册成功！');</script>";
-            header("Location:http://localhost/onlinechat-baseon-PHP-MySQL/php/log-in.php");//跳转到登录页面
+            header("Location:http://localhost:8080/chat/php/log-in.php");//跳转到登录页面
             exit();
         } else {
             echo "<script>alert('注册失败！');</script>";

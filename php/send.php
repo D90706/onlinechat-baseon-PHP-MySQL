@@ -3,7 +3,7 @@
 if (!empty($_POST)) {
     //链接user_information数据库
     // echo "<script>alert('发送成功！');</script>";
-    $conn = new mysqli("localhost", "root", "Scp90706!", "user_information", 3306);
+    $conn = new mysqli("localhost", "root", "", "user_information", 3306);
     if ($conn->connect_error) {
         die('连接失败：' . $conn->connect_error);
     }
