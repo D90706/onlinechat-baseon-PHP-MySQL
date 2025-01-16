@@ -28,7 +28,7 @@ if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['repa
         if ($stmt->execute()) {//第六次判断是否数据插入成功
             echo "<script>username_error.innerHTML='Registration successful';</script>";
             echo "<script>alert('注册成功！');</script>";
-            header("Location:http://localhost/chat/php/log-in.php");//跳转到登录页面
+            header("Location:http://localhost/chat/index.php");//跳转到登录页面
             exit();
         } else {
             echo "<script>alert('注册失败！');</script>";

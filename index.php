@@ -1,5 +1,5 @@
 <?php
-include("../html/index.html");
+include("html/index.html");
     // 处理表单提交的逻辑
     //链接user_information数据库
     $conn = new mysqli("localhost", "root", "Scp90706!", "user_information", 3306);

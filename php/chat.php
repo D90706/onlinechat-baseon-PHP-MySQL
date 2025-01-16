@@ -3,7 +3,7 @@ session_start(); // 启动会话
 
 // 检查用户是否已登录
 if (!isset($_SESSION['username'])) {
-    echo "<script>alert('请先登录！');window.location.href='log-in.php';</script>";
+    echo "<script>alert('请先登录！');window.location.href='/index.php.php';</script>";
     exit(); // 如果未登录，终止执行
 }
 
@@ -70,6 +70,15 @@ if (!isset($_SESSION['messages'])) {
                 scrollToBottom(); // 发送后滚动到底部
             }, 'json');
         });
+        
+    // 在输入框中监听键盘事件
+    document.getElementById("message").addEventListener("keypress", function (event) {
+      // 检测是否按下回车键（key code 为 13）
+      if (event.key === 'Enter') {
+        //event.preventDefault(); // 防止默认的换行行为
+        send.click(); // 触发发送按钮点击事件
+      }
+    });
 
         // 更新消息列表函数
         function updateMessageList(messages) {
@@ -88,7 +97,7 @@ if (!isset($_SESSION['messages'])) {
                 console.log(data); // 输出服务器返回的数据
                 updateMessageList(data); // 更新消息列表
             }, 'json');
-        }, 500);
+        }, 1500);
     </script>
 
 </body>
