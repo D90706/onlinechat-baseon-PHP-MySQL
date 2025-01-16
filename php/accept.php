@@ -16,8 +16,9 @@ while ($row = $result->fetch_assoc()) {
         'username' => $row['username'], // 数据库中应包含用户名字段
         'text' => $row['text']           // 消息内容
     ];
-
+    $messages[] = $messageObject; // 将消息对象添加到消息数组
 }
+$_SESSION['messages'] = array_merge($_SESSION['messages'], $messages); // 合并新消息到会话消息数组中
 echo json_encode($_SESSION['messages']); // 返回最新的消息数组
 $_SESSION['time'] = time();
 

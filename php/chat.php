@@ -85,10 +85,10 @@ if (!isset($_SESSION['messages'])) {
         // 定时刷新消息列表
         setInterval(function () {
             $.post("accept.php", function (data) {
-                //console.log(data); // 输出服务器返回的数据
+                console.log(data); // 输出服务器返回的数据
                 updateMessageList(data); // 更新消息列表
             }, 'json');
-        }, 1500);
+        }, 500);
     </script>
 
 </body>

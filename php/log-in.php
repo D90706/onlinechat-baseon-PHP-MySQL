@@ -22,7 +22,7 @@ include("../html/index.html");
                 session_start();
                 $_SESSION['username'] = $username; //存放用户的用户名
                 //准备跳转
-                header("Location: http://localhost/onlinechat-baseon-PHP-MySQL/php/chat.php");
+                header("Location: http://localhost/chat/php/chat.php");
                 exit();
             } else {
                 echo"<script> alert('password is not correct');</script>";
